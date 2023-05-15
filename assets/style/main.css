@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Scroll Behaviour Style */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    overflow: hidden;
+    background-color: #222;
+}
+
+/* Default Styles for all Elements */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+/* Utilities */
+ul {
+    list-style: none;
+}
+
+section ul li {
+    margin-bottom: 30px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #eee;
+}
+
+/* Components */
+
+/* Heading Styles */
+h1 {
+    font-size: 2rem;
+    color: #eee;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #eee;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #eee;
+}
+
+p {
+    font-size: 1.3rem;
+    color: #ddd;
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 30px;
+    transform: skewX(10deg);
+    background-color: royalblue;
+    outline: 2px solid royalblue;
+    color: white;
+    outline-offset: 5px;
+    cursor: pointer;
+}
+
+.btn div {
+    transform: skewX(-10deg);
+}
+
+/* Overlay Styles */
+#overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Range Slider Styles */
+.range-slider {
+    width: 100%;
+    height: 5px;
+    border-radius: 2.5%;
+    background-color: #aaa;
+}
+
+/* Vertical Line Styles */
+.vertical-line {
+    border-left: 3px solid yellow;
+    height: 70px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+.range-slider-track {
+    height: 100%;
+    background-color: royalblue;
+}
+
+/* Wrapper Styles */
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Main Container Styles */
+.main-container {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 90%;
+    height: 90%;
+    background-color: #222;
+    transform: translateX(-50%);
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 100px;
+}
+
+.main-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 150%;
+    height: 100px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: borderAnimation 6s linear infinite forwards;
+    background-color: rgb(255, 255, 0);
+    box-shadow: 0px 0px 30px rgb(255, 255, 0);
+}
+
+/* Main Container Animation Styles */
+@keyframes borderAnimation {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Layout Styles */
+.layout {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 99%;
+    height: 99%;
+    transform: translateX(-50%);
+    background-color: #222;
+    opacity: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Header Styles */
+header {
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Container Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-container img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+/* Main Navigation Styles */
+.main-navigation {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.7s ease-in-out;
+}
+
+#close-nav {
+    width: 35px;
+    margin-left: auto;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.main-navigation ul li {
+    float: left;
+    margin: 0;
+}
+
+.main-navigation ul li a {
+    text-decoration: none;
+    display: block;
+    color: #eee;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#main-navigation-logout {
+    display: none;
+}
+
+#menu-icon {
+    width: 30px;
+    margin-left: auto;
+    display: none;
+}
+
+header .btn {
+    margin-left: 40px;
+}
+
+/* Content Container Styles */
+.content-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Content Text Styles */
+.content-text {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-text p {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.content-text button {
+    align-self: flex-start;
+    padding: 10px 50px;
+    font-size: 1rem;
+}
+
+/* Content Image Styles */
+.content-image {
+    flex: 1;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.content-image-container {
+    overflow: hidden;
+    width: 70%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    outline: 20px solid rgb(255, 255, 71);
+    outline-offset: 10px;
+    position: relative;
+}
+
+.content-image-container img {
+    width: 100%;
+    object-fit: contain;
+}
+
+/* Article Container Styles */
+.article-container {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.article-container header img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.article-container-date {
+    font-size: 1rem;
+    color: #aaa;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.article-container article {
+    margin-bottom: 40px;
+}
+
+/* Skills Styles */
+
+#skills-container {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+#skills-container li{
+    margin: 0;
+}
+
+.skill-information {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Showcase Container Styles */
+.showcase-container {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.showcase-container header {
+    margin-bottom: 60px;
+}
+
+.showcase-container header img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.showcase-container ul {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.showcase-container ul li {
+    margin: 0;
+}
+
+/* Portfolio Styles */
+#portfolio {
+    margin-bottom: 80px;
+}
+
+.portfolio-sample {
+    background-color: #333;
+    cursor: pointer;
+    outline: 3px solid yellow;
+    outline-offset: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.portfolio-sample img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.portfolio-sample-information {
+    padding: 20px;
+}
+
+.portfolio-sample-name,
+.reviewer-name {
+    font-weight: bold;
+}
+
+.portfolio-sample-description,
+.reviewer-text {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.view-more-samples {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+/* Clients Reviews Styles */
+#clients-reviews header {
+    margin-bottom: 60px;
+}
+
+#reviews-container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+#reviews-container li {
+    margin: 0;
+}
+
+.review {
+    padding: 20px;
+    background-color: #333;
+    cursor: pointer;
+    outline: 3px solid yellow;
+    outline-offset: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.review p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+/* Footer Styles */
+footer {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-top: 2px solid yellow;
+    margin-top: 100px;
+}
+
+footer section {
+    overflow: hidden;
+    padding: 20px;
+}
+
+.footer-description {
+    flex-basis: 50%;
+    padding-right: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-quick-links {
+    flex-basis: 20%;
+}
+
+.footer-privacy {
+    flex-basis: 20%;
+}
+
+footer section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+footer section p {
+    font-size: 1rem;
+}
+
+footer ul li {
+    margin-bottom: 20px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #eee;
+    cursor: pointer;
+    display: block;
+}
